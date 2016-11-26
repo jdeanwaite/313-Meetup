@@ -1,6 +1,6 @@
 <!doctype html>
-<html>
-<g:include controller="layout" action="head" />
+<html lang="en">
+<g:include controller="layout" action="head" params="[title: 'Meetup']" />
 
 <body>
 
@@ -8,13 +8,14 @@
 
 </nav>
 
-<div id="content">
+<div class="container">
     <div class="page-header">
-        <h1>Home</h1>
+        <h1>Meetup <small>A simple group scheduling app</small></h1>
     </div>
 </div>
 
 <g:include controller="layout" action="footer" />
+<g:include controller="layout" action="scripts" />
 
 </body>
 </html>
