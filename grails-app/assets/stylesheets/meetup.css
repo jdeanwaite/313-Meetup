@@ -1,0 +1,32 @@
+.push-down-15 {
+    margin-top: 15%;
+}
+
+.max-50 {
+    max-width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.inline {
+    display: inline-block;
+}
+
+.fill-width {
+    display: block;
+    overflow: hidden;
+    padding-right: 10px;
+}
+
+.fill-width input {
+    width: 100%;
+}
+
+.create-form {
+    overflow: hidden;
+    width: 100%;
+}
+
+.create-form button {
+    float: right;
+}
