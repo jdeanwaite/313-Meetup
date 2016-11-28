@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-<g:include controller="layout" action="head" params="[title: 'Meetup']"/>
+<g:include controller="layout" action="head" params="[title: 'Add Available Times']"/>
 
 <body>
 
@@ -16,9 +16,22 @@
     <div class="content push-down-15 max-50">
         <div class="row">
             <div class="col-xs-12">
-                <h4>Create a Meetup</h4>
-                <p>// TODO: Include controls to create meetup</p>
-            </div>
+                <h4>Add Available Times</h4>
+                <g:form controller="meetup" action="results" method="post">
+                    <div id="timeSlots">
+                        <div class="form-group">
+                            <div class='input-group date'>
+                                <input type='text' name="daterange[]" id="daterange1" class="form-control" />
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-calendar"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <button id="addTimeButton" class="btn btn-default" type="button" name="button">Add Time</button>
+                    <button class="btn btn-success" type="submit">Submit</button>
+                </g:form>
+             </div>
         </div>
     </div>
 </div>

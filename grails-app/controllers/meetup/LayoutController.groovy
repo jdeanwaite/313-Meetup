@@ -13,7 +13,7 @@ class LayoutController {
 
         // The last declared object is the "model" that gets passed into the view (GSP) to be rendered.
         [
-                title: title
+            title: title
         ]
     }
 

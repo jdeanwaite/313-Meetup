@@ -9,7 +9,7 @@ class MeetupController {
     /*
     Route for creating a new meetup. If a name is provided, we call the meetupService to create it,
     otherwise we return an error message to the user.
-     */
+    */
     def create() {
         println("Creating new meetup");
         String meetupName = params.get("meetupName");
@@ -25,6 +25,11 @@ class MeetupController {
         }
 
         render results as JSON;
+    }
+
+    def results() {
+        def times = params.get('daterange[]');
+        render times as JSON;
     }
 
     def meetup() {
