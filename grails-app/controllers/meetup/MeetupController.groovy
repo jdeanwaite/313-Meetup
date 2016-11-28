@@ -26,4 +26,8 @@ class MeetupController {
 
         render results as JSON;
     }
+
+    def meetup() {
+
+    }
 }
