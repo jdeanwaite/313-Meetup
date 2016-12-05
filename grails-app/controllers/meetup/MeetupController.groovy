@@ -35,7 +35,6 @@ class MeetupController {
     }
 
     def results() {
-
         [
                 times: times
         ]
@@ -43,8 +42,30 @@ class MeetupController {
 
     def submitHours() {
         def times = params.get('daterange[]');
-        //TODO: We need to have the schedule form submit a date (2016-12-10 or something) and an hour of the day in 24 hours format.
-        println(times);
+        def date_times = [];
+
+        times.each {
+            def date_str = "${it}";
+            def pieces = date_str.split(' ');
+
+            def start = [];
+            def end = [];
+
+            start.push(pieces[0]);
+            start.push(pieces[1]);
+            end.push(pieces[4]);
+            end.push(pieces[5]);
+
+            def date_time = [];
+
+            date_time.push(start);
+            date_time.push(end);
+            date_times.push(date_time);
+        }
+
+        println(date_times);
+
+        redirect(controller: 'meetup', action: 'results', params: times);
     }
 
     def meetup() {

@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-xs-12">
                 <h4>Add Available Times</h4>
-                <g:form controller="meetup" action="results" method="post">
+                <g:form controller="meetup" action="submitHours" method="post">
                     <div id="timeSlots">
                         <div class="form-group">
                             <div class='input-group date'>

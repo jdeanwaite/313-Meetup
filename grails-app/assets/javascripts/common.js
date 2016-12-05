@@ -2,10 +2,10 @@ var TIME_SLOTS = 1;
 
 function initDateRangePicker(id) {
     $('#daterange' + id).daterangepicker({
-        timepicker: true,
+        timePicker: true,
         timePickerIncrement: 60,
         locale: {
-            format: 'MM/DD/YYYY h:mm A'
+            format: 'MM/DD/YYYY H:mm A'
         }
     });
 }
