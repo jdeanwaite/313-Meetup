@@ -12,7 +12,6 @@
     <div class="page-header">
         <h1>Meetup <small>A simple group scheduling app</small></h1>
     </div>
-
     <div class="content push-down-15 max-50">
         <div class="row">
             <div class="col-xs-12">

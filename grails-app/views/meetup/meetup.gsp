@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="page-header">
-        <h1>Create a Meetup</h1>
+        <h1>Meetup ${id.toUpperCase()}</h1>
     </div>
 
     <div class="content push-down-15 max-50">
