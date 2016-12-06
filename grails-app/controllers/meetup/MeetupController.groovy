@@ -30,40 +30,52 @@ class MeetupController {
             results = [success: false, message: "Provide a name for the meetup"];
             forward controller: 'home', view: 'index', params: results;
         }
-
-//        render results as JSON;
     }
 
     def results() {
+        def times = [];
+        def availableTimes = meetupService.getCommonMeetupTimes(params.get("id"));
         [
                 times: times
         ]
     }
 
     def submitHours() {
-        def times = params.get('daterange[]');
-        def date_times = [];
+        def times = params.list('daterange[]');
+        def dateTimes = [];
+        def meetupId = params.get('meetupId') as String;
+        def name = params.get('name') as String;
+
+        println("times " + times);
 
         times.each {
-            def date_str = "${it}";
-            def pieces = date_str.split(' ');
+            def dateString = "${it}";
+            def pieces = dateString.split(' ');
 
             def start = [];
             def end = [];
+
+            print("dateString ");
+            println(dateString);
+
+            print("pieces ");
+            println(pieces);
 
             start.push(pieces[0]);
             start.push(pieces[1]);
             end.push(pieces[4]);
             end.push(pieces[5]);
 
-            def date_time = [];
+            def dateTime = [];
 
-            date_time.push(start);
-            date_time.push(end);
-            date_times.push(date_time);
+            dateTime.push(start.join(" "));
+            dateTime.push(end.join(" "));
+            dateTimes.push(dateTime);
         }
 
-        println(date_times);
+        println(dateTimes);
+
+        meetupService.saveAvailableTimes(meetupId, dateTimes, name);
 
         redirect(controller: 'meetup', action: 'results', params: times);
     }

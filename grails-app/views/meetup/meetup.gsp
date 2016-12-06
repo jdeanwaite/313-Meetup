@@ -18,10 +18,16 @@
             <div class="col-xs-12">
                 <h4>Add Available Times</h4>
                 <g:form controller="meetup" action="submitHours" method="post">
+                    <input name="meetupId" type="hidden" value="${id}">
+
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+                    </div>
+
                     <div id="timeSlots">
                         <div class="form-group">
                             <div class='input-group date'>
-                                <input type='text' name="daterange[]" id="daterange1" class="form-control" />
+                                <input type='text' name="daterange[]" id="daterange1" class="form-control"/>
                                 <span class="input-group-addon">
                                     <span class="glyphicon glyphicon-calendar"></span>
                                 </span>
@@ -31,7 +37,7 @@
                     <button id="addTimeButton" class="btn btn-default" type="button" name="button">Add Time</button>
                     <button class="btn btn-success" type="submit">Submit</button>
                 </g:form>
-             </div>
+            </div>
         </div>
     </div>
 </div>
