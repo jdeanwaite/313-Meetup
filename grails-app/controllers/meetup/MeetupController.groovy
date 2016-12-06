@@ -33,8 +33,7 @@ class MeetupController {
     }
 
     def results() {
-        def times = [];
-        def availableTimes = meetupService.getCommonMeetupTimes(params.get("id"));
+        def times = meetupService.getCommonMeetupTimes(params.get("id"));
         [
                 times: times
         ]
