@@ -27,6 +27,7 @@
     width: 100%;
 }
 
-.create-form button {
+.create-form button,
+.add-time-button button {
     float: right;
 }

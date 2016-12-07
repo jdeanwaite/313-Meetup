@@ -109,7 +109,9 @@ class MeetupService {
     }
 
     def getCommonMeetupTimes(String publicId) {
+        println('\npublicId: ' + publicId + '\n');
         def id = Meetup.findByPublicId(publicId).id;
+        println('\nid: ' + id + '\n');
         def availableTimes = [:];
         Class.forName("com.mysql.jdbc.Driver").newInstance();
         Connection con = DriverManager.getConnection("jdbc:mysql://localhost/meetup", "root", "root");

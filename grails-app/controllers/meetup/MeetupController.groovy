@@ -33,9 +33,10 @@ class MeetupController {
     }
 
     def results() {
+        println(params.get("id"));
         def times = meetupService.getCommonMeetupTimes(params.get("id"));
         [
-                times: times
+            times: times
         ]
     }
 
@@ -76,7 +77,7 @@ class MeetupController {
 
         meetupService.saveAvailableTimes(meetupId, dateTimes, name);
 
-        redirect(controller: 'meetup', action: 'results', params: times);
+        redirect(action: 'results', params: [id: meetupId]);
     }
 
     def meetup() {
