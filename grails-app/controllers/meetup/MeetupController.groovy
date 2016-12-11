@@ -34,9 +34,19 @@ class MeetupController {
 
     def results() {
         println(params.get("id"));
-        def times = meetupService.getCommonMeetupTimes(params.get("id"));
+        def times = meetupService.getCommonMeetupTimes(params.get("id") as String);
+        Meetup meetup = Meetup.findByPublicId(params.get("id") as String);
+        def members = AvailableTime.withCriteria {
+            eq('meetup', meetup);
+            projections {
+                distinct("name")
+            }
+        }
+
+        println("members " + members);
         [
-            times: times
+                times  : times,
+                members: members
         ]
     }
 

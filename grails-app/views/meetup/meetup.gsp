@@ -16,7 +16,16 @@
     <div class="content push-down-15 max-50">
         <div class="row">
             <div class="col-xs-12">
-                <h4>Add Available Times</h4>
+                <h4>1. Invite</h4>
+
+                <p>Share this link with your group members: <a
+                        href="<g:createLink controller="meetup" action="meetup" params="[id: id]" absolute="true"/>"><g:createLink controller="meetup" action="meetup" params="[id: id]" absolute="true"/></a></p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <h4>2. Add Available Times</h4>
                 <g:form controller="meetup" action="submitHours" method="post">
                     <input name="meetupId" type="hidden" value="${id}">
 
